@@ -12,7 +12,7 @@ ParticleEmissor é reponsavel por guardar várias particulas que são criadas e 
 atualizada, destruída e desenhada. Ela também é reponsavel por definir o ponto de origem das particulas e a direção para elas 
 irão "espirrar", o angulo de abertura maxima do cone e o tempo para criar uma nova particula.
 
-----------------------------------------------------------------------------------------------------------------
+
   Progresso Atual do Sistema de Particula
 ----------------------------------------------------------------------------------------------------------------
 
