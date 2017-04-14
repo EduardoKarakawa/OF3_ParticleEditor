@@ -32,7 +32,7 @@
       <Filter>addons\ofxGui\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Particle.cpp" />
-    <ClCompile Include="src\ParticleSystem.cpp" />
+    <ClCompile Include="src\ParticleEmission.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -80,7 +80,7 @@
       <Filter>addons\ofxGui\src</Filter>
     </ClInclude>
     <ClInclude Include="src\Particle.h" />
-    <ClInclude Include="src\ParticleSystem.h" />
+    <ClInclude Include="src\ParticleEmission.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
