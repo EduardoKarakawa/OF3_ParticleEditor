@@ -11,10 +11,11 @@ class Gui {
 		ofxVec2Slider worldPos, direction; //slider vector
 		ofxIntSlider velocity; //slider int
 		ofxColorSlider color; //slider color
-		ofxToggle worldPosToMouse, directionPosToMouse, dirPosToMouse; //check button 
+		ofxToggle worldPosToMouse, directionPosToMouse; //check button 
+		ofxToggle drawParameters;
 		ofxPanel gui;
 		float buttonHide;
-		ofVec2f mousePositon;
+		ofVec2f mousePositon, antPosition;
 
 	public:
 		void Init();

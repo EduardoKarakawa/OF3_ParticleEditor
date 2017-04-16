@@ -4,40 +4,40 @@
 
 void Gui::Init() {
 	gui.setup();
+	// Desenha a direcao e cone de spawn
+	gui.add(drawParameters.setup		("Show Direction/Cone", true));
 
 	// Define o tempo de vida da particula
-	gui.add(lifeTime.setup	("Life Time: ", 1.5f, 1.0f / 500.0f, 25));
+	gui.add(lifeTime.setup				("Life Time: ", 1.5f, 1.0f / 500.0f, 25));
 	
 	// Ajusta o tempo de spawn de uma particula
-	gui.add(timeSpawn.setup	("Time Spawn: ", 0.03f, 1.0f / 500.0f, 1.0f));
+	gui.add(timeSpawn.setup				("Time Spawn: ", 0.03f, 1.0f / 500.0f, 1.0f));
 
 	// Angulo de abertura para o emissor
-	gui.add(angle.setup		("Open Angle: ", 30, 1, 360)); 
+	gui.add(angle.setup					("Open Angle: ", 30, 1, 360)); 
 	
 	// Define a velocidade com que a particula movimenta
-	gui.add(velocity.setup	("Velocity: ", 500, 0, 1000));
+	gui.add(velocity.setup				("Velocity: ", 500, 0, 1000));
 
 	// Raio para definir o tamanho da particula
-	gui.add(radius.setup	("Radius Particle: ", 30, 10, 300));
-
-	// Habilita para mover a direcao e a posicao atual para o mouse
-	gui.add(dirPosToMouse.setup("Directio/Position to Mouse", false));
+	gui.add(radius.setup				("Radius Particle: ", 30, 10, 300));
 
 	// Habilita para mover para o mouse
-	gui.add(worldPosToMouse.setup("Origin to Mouse", false));
+	gui.add(worldPosToMouse.setup		("Origin to Mouse", false));
 
 	//Slider para setar a Posicao de Origem
-	gui.add(worldPos.setup	("Position Emissor: ",	ofVec2f(ofGetWidth()*.5, ofGetHeight()*.5), 
-													ofVec2f(0, 0), ofVec2f(ofGetWidth(), ofGetHeight())));
+	gui.add(worldPos.setup				("Position Emissor: ",	ofVec2f(ofGetWidth()*.5, ofGetHeight()*.5), 
+																ofVec2f(0, 0), ofVec2f(ofGetWidth(), ofGetHeight())));
 
 	// Habilita para mover para o mouse
-	gui.add(directionPosToMouse.setup("Direction to Mouse", false));
+	gui.add(directionPosToMouse.setup	("Direction to Mouse", false));
 
 	//Slider para setar a Direcao
-	gui.add(direction.setup("Direction: ",	ofVec2f(ofGetWidth()*.4, ofGetHeight()*.5),
-											ofVec2f(0, 0), ofVec2f(ofGetWidth(), ofGetHeight()))); 
+	gui.add(direction.setup				("Direction: ",	ofVec2f(ofGetWidth()*.4, ofGetHeight()*.5),
+														ofVec2f(0, 0), ofVec2f(ofGetWidth(), ofGetHeight()))); 
 	// Muda a cor das particulas
-	gui.add(color.setup		("Color: ", ofColor(255, 159, 17), ofColor(0, 0), ofColor(255, 255)));
+	gui.add(color.setup					("Color: ", ofColor(255, 159, 17), ofColor(0, 0), ofColor(255, 255)));
+
 	
 }
 
@@ -58,7 +58,10 @@ void Gui::Draw() {
 	if (!buttonHide) {
 		gui.draw();
 	}
-	DrawDirectionAndCone(worldPos, direction);
+	if (drawParameters) {
+		DrawDirectionAndCone(worldPos, direction);
+	}
+
 
 
 }
@@ -90,7 +93,9 @@ void Gui::ChangeDirectionAndPosition()
 
 	// Altera somente a Origem
 	if (worldPosToMouse) {
+		antPosition = worldPos;
 		worldPos = mousePositon;
+		direction = ofVec2f(direction)+ (ofVec2f(worldPos) - antPosition);
 
 		if (ofGetMousePressed(OF_MOUSE_BUTTON_3)) {
 			worldPosToMouse = false;
