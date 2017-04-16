@@ -33,6 +33,7 @@
     </ClCompile>
     <ClCompile Include="src\Particle.cpp" />
     <ClCompile Include="src\ParticleEmission.cpp" />
+    <ClCompile Include="src\Gui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -81,6 +82,7 @@
     </ClInclude>
     <ClInclude Include="src\Particle.h" />
     <ClInclude Include="src\ParticleEmission.h" />
+    <ClInclude Include="src\Gui.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

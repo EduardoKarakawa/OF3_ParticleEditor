@@ -13,6 +13,7 @@ class ParticleEmission
 		ofImage m_sprite;
 		ofVec2f m_positionOrigin;
 		ofVec2f m_direction;
+		ofColor m_color;
 		float m_openAngle;
 		float m_maxLifeTime;
 		float m_velocity;
@@ -27,21 +28,20 @@ class ParticleEmission
 		~ParticleEmission();
 
 		void Setup(ofVec2f origin, ofVec2f direction, float openAngle, float speed, float lifeTime, float timeSpawn, string sprite, float size);
-		void Update(ofVec2f position, float deltaTime);
-		void SetDirection(ofVec2f newDirection);
-		void Draw();
+		void Update(float deltaTime);
 		void CreateParticle();
-		void IncreaseOpenAngle();
-		void DecreaseOpenAngle();
-		void IncreaseSpeedSpawn();
-		void DecreaseSpeedSpawn();
-		void IncreaseLifeTime();
-		void DecreaseLifeTime();
-		float GetOpenAngle();
-		float GetLifeTime();
-		float GetSpawnTime();
-		int GetTotalParticle();
-		void SetOnOffParticles();
-		bool GetOnOffParticles();
+		void Draw();
+
+
+		void SetOrigin(ofVec2f origin);
+		void SetDirection(ofVec2f direction);
+		void SetOpenAngle(float openAngle);
+		void SetSpeed(float speed);
+		void SetSizeParticle(float radius);
+		void SetLifeTime(float lifeTime);
+		void SetSprite(string sprite);
+		void SetSpawnTime(float timeSpawn);
+		void SetColor(ofColor color);
+
 };
 

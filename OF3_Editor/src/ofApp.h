@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ParticleEmission.h"	
+#include "Gui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,5 +24,5 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		ParticleEmission teste;
-		
+		Gui testeGui;
 };

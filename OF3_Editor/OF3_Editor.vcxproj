@@ -187,6 +187,7 @@ C:\Temp\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</
     <ClCompile Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.cpp" />
     <ClCompile Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.cpp" />
     <ClCompile Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.cpp" />
+    <ClCompile Include="src\Gui.cpp" />
     <ClCompile Include="src\ParticleEmission.cpp" />
     <ClCompile Include="src\Particle.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -202,6 +203,7 @@ C:\Temp\of_v0.9.8_vs_release\addons\ofxGui\src;%(AdditionalIncludeDirectories)</
     <ClInclude Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSlider.h" />
     <ClInclude Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxSliderGroup.h" />
     <ClInclude Include="..\..\..\..\..\..\Temp\of_v0.9.8_vs_release\addons\ofxGui\src\ofxToggle.h" />
+    <ClInclude Include="src\Gui.h" />
     <ClInclude Include="src\ParticleEmission.h" />
     <ClInclude Include="src\Particle.h" />
     <ClInclude Include="src\ofApp.h" />

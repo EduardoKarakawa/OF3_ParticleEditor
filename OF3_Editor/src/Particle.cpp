@@ -43,13 +43,14 @@ bool Particle::IsLife()
 	return m_lifeTime > 0.0f;
 }
 
-void Particle::Draw(ofImage sprite, ofVec2f origin)
+void Particle::Draw(ofImage sprite, ofColor color, ofVec2f origin)
 {
 	// Seta uma cor e define a opcidade de acordo com o tempo de vida calculado na funcao Update
-	ofSetColor(255, 159, 17, m_opacity);
+	ofSetColor(color, m_opacity);
 	
 	// Desenha a particula apartir da posicao de origem, no caso onde a orgem da particula estiver + a posicao da particula atual
-	sprite.draw(m_position);
+	//sprite.draw(m_position.x - sprite.getWidth() / 2.0f, m_position.y - sprite.getHeight() / 2.0f);
+	sprite.draw(m_position.x - sprite.getWidth() / 2.0f, m_position.y - sprite.getHeight() / 2.0f);
 }
 
 

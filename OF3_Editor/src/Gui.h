@@ -2,23 +2,26 @@
 
 #include "ofxGui.h"
 #include "ofxLabel.h"
+#include "ParticleEmission.h"
 
 
 class Gui {
 	private:
-		ofxFloatSlider size, lifeTime, angle, radius; //slider float
-		ofxVec2Slider worldPos, imagePoint; //slider vector
-		ofxIntSlider velocity, quantity; //slider int
+		ofxFloatSlider size, lifeTime, angle, radius, timeSpawn; //slider float
+		ofxVec2Slider worldPos, direction; //slider vector
+		ofxIntSlider velocity; //slider int
 		ofxColorSlider color; //slider color
-		ofxButton flash; //check button 
-		ofxToggle fill; //
+		ofxToggle worldPosToMouse, directionPosToMouse, dirPosToMouse; //check button 
 		ofxPanel gui;
-		ofxLabel screenSize;
 		float buttonHide;
+		ofVec2f mousePositon;
+
 	public:
-		void init();
-		void update();
-		void draw();
-		void hide();
-		void resize(int w, int h);
+		void Init();
+		void Update(ParticleEmission &emissor);
+		void Draw();
+		void Hide();
+		void SetMousePosition(int x, int y);
+		void ChangeDirectionAndPosition();
+		void DrawDirectionAndCone(ofVec2f posit, ofVec2f direct);
 };
