@@ -18,6 +18,7 @@ class ParticleEmission
 		float m_velocity;
 		float m_timeSpawnParticle;
 		float m_spawnTimeCont;
+		bool m_enableParticles;
 
 
 
@@ -30,5 +31,17 @@ class ParticleEmission
 		void SetDirection(ofVec2f newDirection);
 		void Draw();
 		void CreateParticle();
+		void IncreaseOpenAngle();
+		void DecreaseOpenAngle();
+		void IncreaseSpeedSpawn();
+		void DecreaseSpeedSpawn();
+		void IncreaseLifeTime();
+		void DecreaseLifeTime();
+		float GetOpenAngle();
+		float GetLifeTime();
+		float GetSpawnTime();
+		int GetTotalParticle();
+		void SetOnOffParticles();
+		bool GetOnOffParticles();
 };
 
